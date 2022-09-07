@@ -1,10 +1,46 @@
-# Saloon SDK Template
-This template repository has been created to help you write SDKs easily. 
+# IpStack API
+This repo is a test of the Saloon SDK setup, using with the API from [IPstack.com](http://ipstack.com?utm_source=FirstPromoter&utm_medium=Affiliate&fpr=hennell).
+
+It is not designed as production ready, just an working example of a basic API SDK with [Saloon](https://docs.saloon.dev/). 
+
+It returns single ip lookups as handy php DTO classes, but has limited error handling and no support for batch IP lookups.
 
 ## Getting Started
-1. Create a new repository and make sure to select this template
-2. Clone the repository locally
-3. Run the "php configure.php" locally to run through the setup
-4. Start building!
 
-> To read more about building SDKs with Saloon, see here: https://docs.saloon.dev/the-basics/sdk-style-connectors
+As an example package this is not on packagist, so you need to add the repo to your composer.json:
+
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "git@github.com:paulhennell/ipstack-api.git"
+    }
+]
+```
+
+You can then run `composer require paulhennell/ipstack-api` to install it.
+
+## Useage
+
+```php 
+
+$ipstack = new Paulhennell\IpstackApi\IpstackApi($IPStackAccessKey);
+
+$response = $ipstack->lookup('134.201.250.155')->send();
+
+$response->dto() // returns an IpDTO class with nested clases from src/Data
+
+```
+
+
+### Get Quota limits
+
+Depending on the IP stack plan you're on you will have a monthly quota.
+You can check your current status with some methods on any response object:
+
+```php
+$response->getQuotaLimit(); //The max requests you can make per month
+
+$response->getQuotaRemaining(); //How many requests you have left
+```
+
