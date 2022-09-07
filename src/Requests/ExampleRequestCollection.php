@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\SDK\Requests;
+namespace Paulhennell\IpstackApi\Requests;
 
 use Sammyjo20\Saloon\Http\RequestCollection;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\SDK\Data;
+namespace Paulhennell\IpstackApi\Data;
 
 use Spatie\DataTransferObject\DataTransferObject;
 

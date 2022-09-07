@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\SDK\Auth;
+namespace Paulhennell\IpstackApi\Auth;
 
 use Sammyjo20\Saloon\Http\SaloonRequest;
 use Sammyjo20\Saloon\Interfaces\AuthenticatorInterface;

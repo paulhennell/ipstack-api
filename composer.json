@@ -1,19 +1,19 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "paulhennell/ipstack-api",
+    "description": "This is my package ipstack-api",
     "type": "library",
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/paulhennell/ipstack-api",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "VendorName\\SDK\\": "src/",
-            "VendorName\\SDK\\Tests\\": "tests/"
+            "Paulhennell\\IpstackApi\\": "src/",
+            "Paulhennell\\IpstackApi\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com"
+            "name": "paulhennell",
+            "email": "git@hennell.dev"
         }
     ],
     "minimum-stability": "stable",

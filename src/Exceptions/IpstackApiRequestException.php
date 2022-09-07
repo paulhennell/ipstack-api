@@ -1,11 +1,11 @@
 <?php
 
-namespace VendorName\SDK\Exceptions;
+namespace Paulhennell\IpstackApi\Exceptions;
 
 use Sammyjo20\Saloon\Http\SaloonResponse;
 use Sammyjo20\Saloon\Exceptions\SaloonRequestException;
 
-class SDKRequestException extends SaloonRequestException
+class IpstackApiRequestException extends SaloonRequestException
 {
     /**
      * Retrieve the response.

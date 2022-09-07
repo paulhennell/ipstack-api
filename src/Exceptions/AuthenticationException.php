@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\SDK\Exceptions;
+namespace Paulhennell\IpstackApi\Exceptions;
 
 use Exception;
 

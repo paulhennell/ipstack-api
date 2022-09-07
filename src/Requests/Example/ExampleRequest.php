@@ -1,8 +1,8 @@
 <?php
 
-namespace VendorName\SDK\Requests\Example;
+namespace Paulhennell\IpstackApi\Requests\Example;
 
-use VendorName\SDK\Requests\Request;
+use Paulhennell\IpstackApi\Requests\Request;
 use Sammyjo20\Saloon\Constants\Saloon;
 
 class ExampleRequest extends Request
