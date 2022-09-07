@@ -2,6 +2,7 @@
 
 namespace Paulhennell\IpstackApi;
 
+use Paulhennell\IpstackApi\Requests\LookupIpRequest;
 use Paulhennell\IpstackApi\Responses\IpstackApiResponse;
 use Sammyjo20\Saloon\Http\SaloonConnector;
 use Sammyjo20\Saloon\Traits\Plugins\AcceptsJson;
@@ -19,7 +20,14 @@ class IpstackApi extends SaloonConnector
      *
      * @var string
      */
-    protected string $apiBaseUrl = ':base_url';
+    protected string $apiBaseUrl = 'https://api.ipstack.com/';
+
+    /**
+     * The Access key from ipstack.com
+     *
+     * @var string
+     */
+    protected string $accessKey;
 
     /**
      * Custom response that all requests will return.
@@ -35,6 +43,7 @@ class IpstackApi extends SaloonConnector
      */
     protected array $requests = [
         'example' => ExampleRequestCollection::class,
+        'lookup' => LookupIpRequest::class,
     ];
 
     /**
@@ -50,8 +59,9 @@ class IpstackApi extends SaloonConnector
     /**
      * @param string|null $baseUrl
      */
-    public function __construct(string $baseUrl = null)
+    public function __construct(string $apikey, string $baseUrl = null)
     {
+        $this->accessKey = $apikey;
         if (isset($baseUrl)) {
             $this->apiBaseUrl = $baseUrl;
         }
@@ -75,5 +85,12 @@ class IpstackApi extends SaloonConnector
     public function defaultConfig(): array
     {
         return [];
+    }
+
+    public function defaultQuery() : array
+    {
+        return [
+            'access_key' => $this->accessKey
+        ];
     }
 }
